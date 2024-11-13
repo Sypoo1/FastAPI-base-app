@@ -1,17 +1,21 @@
-[tool.poetry]
-package-mode = false
+[project]
+name = "FastAPI-base-app"
+version = "0.1.0"
+requires-python = ">=3.12"
+description = "FastAPI template"
+readme = "README.md"
 
-[tool.poetry.dependencies]
-python = "^3.12"
-fastapi = "^0.111.0"
-uvicorn = {extras = ["standard"], version = "^0.29.0"}
-pydantic = {extras = ["email"], version = "^2.7.1"}
-pydantic-settings = "^2.2.1"
-sqlalchemy = {extras = ["asyncio"], version = "^2.0.30"}
-asyncpg = "^0.29.0"
-alembic = "^1.13.1"
-gunicorn = "^23.0.0"
-
-[tool.poetry.group.dev.dependencies]
-black = "^24.4.2"
-
+dependencies = [
+    "alembic>=1.13.1",
+    "asyncpg>=0.29.0",
+    "fastapi>=0.111.0",
+    "gunicorn>=23.0.0",
+    "pydantic[email]>=2.7.1",
+    "pydantic-settings>=2.2.1",
+    "sqlalchemy[asyncio]>=2.0.30",
+    "uvicorn[standard]>=0.29.0",
+]
+[tool.uv]
+dev-dependencies = [
+    "ruff",
+]
