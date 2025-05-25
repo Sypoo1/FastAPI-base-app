@@ -10,6 +10,4 @@ class User(IntIdPkMixin, Base):
     foo: Mapped[int]
     bar: Mapped[int]
 
-    __table_args__ = (
-        UniqueConstraint("foo", "bar"),
-    )
+    __table_args__ = (UniqueConstraint("foo", "bar"),)
