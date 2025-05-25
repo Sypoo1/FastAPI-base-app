@@ -1,17 +1,16 @@
 from typing import Annotated
 
+from core.models import db_helper
+from core.schemas.user import (
+    UserCreate,
+    UserRead,
+)
+from crud import users as users_crud
 from fastapi import (
     APIRouter,
     Depends,
 )
 from sqlalchemy.ext.asyncio import AsyncSession
-
-from core.models import db_helper
-from core.schemas.user import (
-    UserRead,
-    UserCreate,
-)
-from crud import users as users_crud
 
 router = APIRouter(tags=["Users"])
 
