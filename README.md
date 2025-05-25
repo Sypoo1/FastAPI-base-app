@@ -1,8 +1,5 @@
 # FastAPI Example App
 
-```shell
-gunicorn main:main_app --workers 4 --worker-class uvicorn.workers.UvicornWorker --bind 0.0.0.0:8000
-```
 
 Resources:
 
@@ -18,5 +15,3 @@ Resources:
 - Alembic cookbook https://alembic.sqlalchemy.org/en/latest/cookbook.html
 - Alembic naming conventions https://alembic.sqlalchemy.org/en/latest/naming.html#integration-of-naming-conventions-into-operations-autogenerate
 - Alembic + asyncio recipe https://alembic.sqlalchemy.org/en/latest/cookbook.html#using-asyncio-with-alembic
-- orjson https://github.com/ijl/orjson
-- FastAPI ORJSONResponse https://fastapi.tiangolo.com/advanced/custom-response/#use-orjsonresponse
