@@ -10,9 +10,7 @@ logging.basicConfig(
     format=settings.logging.log_format,
 )
 
-main_app = create_app(
-    create_custom_static_urls=True,
-)
+main_app = create_app()
 
 main_app.include_router(
     api_router,
