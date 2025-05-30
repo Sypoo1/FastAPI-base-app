@@ -1,6 +1,6 @@
 from typing import Literal
 
-from pydantic import BaseModel, PostgresDsn
+from pydantic import BaseModel, Field, PostgresDsn
 from pydantic_settings import (
     BaseSettings,
     SettingsConfigDict,
@@ -71,7 +71,10 @@ class Settings(BaseSettings):
     gunicorn: GunicornConfig = GunicornConfig()
     logging: LoggingConfig = LoggingConfig()
     api: ApiPrefix = ApiPrefix()
-    db: DatabaseConfig
+    # db: DatabaseConfig
+    db: DatabaseConfig = Field(
+        default_factory=lambda: DatabaseConfig()  # type: ignore[reportCallIssue]
+    )
 
 
-settings = Settings()
+settings = Settings()  # type: ignore

@@ -3,17 +3,16 @@ repos:
     rev: 0.7.9
     hooks:
       - id: uv-lock
-        args: [ --verbose ]
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.11.12
     hooks:
       - id: ruff-check
         args: [ --fix ]
       - id: ruff-format
-  # - repo: https://github.com/RobertCraigie/pyright-python
-  #   rev: v1.1.387
-  #   hooks:
-  #     - id: pyright
+  - repo: https://github.com/RobertCraigie/pyright-python # soon will switch to ty type checker
+    rev: v1.1.401
+    hooks:
+      - id: pyright
   # - repo: local
   #   hooks:
   #     - id: pytest
